@@ -19,12 +19,27 @@ function StudentDashboard() {
     }, [user, navigate]);
 
     const handleSubmit = async () => {
+    if (!form.reason || !form.fromDate || !form.toDate) {
+        alert("Please fill all outpass details before submitting.");
+        return;
+    }
+
+    try {
         await axios.post('http://localhost:5000/outpass/create', {
-            ...form, studentId: user.studentId, studentName: user.name, hostelName: user.hostelName
+            ...form,
+            studentId: user.studentId,
+            studentName: user.name,
+            hostelName: user.hostelName
         });
+
         alert("Requested!");
         window.location.reload();
-    };
+
+    } catch (err) {
+        alert(err.response?.data?.error || "Something went wrong");
+    }
+};
+
 
     // 2. Function to handle checkbox toggles
     const handleCheckboxChange = (id) => {

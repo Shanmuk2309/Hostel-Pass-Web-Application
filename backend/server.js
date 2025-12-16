@@ -89,13 +89,39 @@ app.post('/login', async (req, res) => {
 // 3. Create Outpass (Student)
 app.post('/outpass/create', async (req, res) => {
     try {
-        const outpass = new Outpass(req.body);
+        const { studentId, studentName, hostelName, fromDate, toDate, reason } = req.body;
+
+        // 1️⃣ Check for empty fields
+        if (!studentId || !studentName || !hostelName || !fromDate || !toDate || !reason) {
+            return res.status(400).json({
+                error: "All outpass details are required"
+            });
+        }
+
+        // 2️⃣ Date validation
+        if (new Date(toDate) < new Date(fromDate)) {
+            return res.status(400).json({
+                error: "To Date cannot be earlier than From Date"
+            });
+        }
+
+        const outpass = new Outpass({
+            studentId,
+            studentName,
+            hostelName,
+            fromDate,
+            toDate,
+            reason
+        });
+
         await outpass.save();
         res.json({ message: "Outpass Requested" });
+
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
+
 
 // 4. Get Student's Outpasses
 app.get('/outpass/student/:studentId', async (req, res) => {
