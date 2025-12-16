@@ -1,0 +1,139 @@
+/* Global Resets */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* --- Container for Forms (Login/Register) --- */
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-header {
+  margin-bottom: 20px;
+  color: #4a90e2;
+}
+
+/* --- Form Elements --- */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  font-size: 16px;
+}
+
+.form-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-btn:hover {
+  background-color: #357abd;
+}
+
+.link-text {
+  display: block;
+  margin-top: 15px;
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+/* --- Dashboard Styles --- */
+.dashboard-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* --- Outpass Cards --- */
+.outpass-list {
+  list-style: none;
+  padding: 0;
+}
+
+.outpass-card {
+  border: 1px solid #e1e4e8;
+  border-left: 5px solid #4a90e2; /* Blue accent */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.status-Pending { background-color: #fff7e6; color: #fa8c16; border: 1px solid #ffd591; }
+.status-Approved { background-color: #f6ffed; color: #52c41a; border: 1px solid #b7eb8f; }
+.status-Rejected { background-color: #fff1f0; color: #f5222d; border: 1px solid #ffa39e; }
+
+/* Warden Action Buttons */
+.action-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.approve-btn { background-color: #52c41a; color: white; }
+.reject-btn { background-color: #ff4d4f; color: white; }
